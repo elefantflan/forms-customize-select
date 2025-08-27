@@ -1,7 +1,6 @@
+/* opt-in custom select render */
 select,
 ::picker(select){
-    /* opt-in to the custom select functionality and minimal 
-    browser base styles */
     appearance: base-select;
 }
 
@@ -15,4 +14,27 @@ select{
 select:hover,
 select:focus{
     background:#dddddd;
+}
+/* style picker icon */
+
+select::picker-icon{
+    color:#999999;
+    transition: 0.4s rotate;
+}
+
+/* drop down picker */
+
+::picker(select){
+    border:none;
+}
+
+option{
+    display:flex;
+    justify-content:flex-start;
+    gap:20px;
+
+    border:2px solid #dddddd;
+    background:#eeeeee;
+    padding:10px;
+    transition:0.4s;
 }
