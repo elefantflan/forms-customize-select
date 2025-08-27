@@ -1,0 +1,4 @@
+select,
+::picker(select){
+    appearance: base-select;
+}
