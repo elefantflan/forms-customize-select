@@ -1,4 +1,18 @@
 select,
 ::picker(select){
+    /* opt-in to the custom select functionality and minimal 
+    browser base styles */
     appearance: base-select;
+}
+
+select{
+    border:2px solid #dddddd;
+    background: #eeeeee;
+    padding: 10px;
+    transition: 0.4s;
+}
+
+select:hover,
+select:focus{
+    background:#dddddd;
 }
