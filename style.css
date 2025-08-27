@@ -38,3 +38,71 @@ option{
     padding:10px;
     transition:0.4s;
 }
+
+option:first-of-type{
+    border-radius: 8px 8px 0 0;
+}
+
+option:last-of-type{
+    border-radius: 0 0 8px 8px;
+}
+
+option:not(option:last-of-type){
+    border-bottom:none;
+}
+
+option:nth-of-type(odd){
+    background:white;
+}
+
+option:hover,
+option:focus{
+    background:plum;
+}
+
+option .icon{
+    font-size: 1.6rem;
+    /* text-box: trim-both cap alphabetic; (not working)*/
+}
+
+/*  */
+
+selectedcontent .icon{
+    display:none;
+}
+
+/*  */
+
+option:checked{
+    font-weight:bold;
+}
+
+/*  */
+
+option::checkmark{
+    order:1;
+    margin-left:auto;
+    content: "☑️";
+}
+
+/* animating picker using popover states*/
+::picker(select){
+    opacity:0;
+    transition: all 0.4s allow-discrete;
+}
+
+::picker(select):popover-open{
+    opacity:1;
+}
+
+@starting-style{
+    ::picker(select):popover-open{
+        opacity:0;
+    }
+}
+
+::picker(select){
+    top:calc(anchor(bottom)+1px);
+    left:anchor(10%);
+}
+
